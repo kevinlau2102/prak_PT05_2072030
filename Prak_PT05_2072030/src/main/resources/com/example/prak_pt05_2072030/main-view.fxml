@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.prak_pt05_2072030.Controller.ItemController">
+    <top>
+        <MenuBar BorderPane.alignment="CENTER">
+            <menus>
+                <Menu mnemonicParsing="false" text="File">
+                    <items>
+                        <MenuItem fx:id="showKategori" mnemonicParsing="false" onAction="#showKategori" text="Show Category Management" />
+                  <MenuItem fx:id="close" mnemonicParsing="false" onAction="#close" text="Close" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Help">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="About" />
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+    </top>
+    <center>
+        <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+            <children>
+                <TableView fx:id="table" onMouseClicked="#getSelectedItem" prefHeight="375.0" prefWidth="500.0">
+                    <columns>
+                        <TableColumn fx:id="idCol" prefWidth="45.0" text="ID" />
+                        <TableColumn fx:id="namaCol" minWidth="0.0" prefWidth="100.0" text="Name" />
+                        <TableColumn fx:id="priceCol" prefWidth="100.0" text="Price" />
+                        <TableColumn fx:id="kategoriCol" prefWidth="100.0" text="Category" />
+                    </columns>
+                </TableView>
+            </children>
+        </HBox>
+    </center>
+    <left>
+        <VBox prefHeight="374.0" prefWidth="252.0" BorderPane.alignment="CENTER">
+            <children>
+                <HBox alignment="CENTER_LEFT" prefHeight="36.0" prefWidth="187.0">
+                    <children>
+                        <Label fx:id="id" text="ID: ">
+                            <HBox.margin>
+                                <Insets right="50.0" />
+                            </HBox.margin>
+                        </Label>
+                        <TextField fx:id="idItem" prefHeight="26.0" prefWidth="170.0">
+                            <HBox.margin>
+                                <Insets />
+                            </HBox.margin>
+                        </TextField>
+                    </children>
+                </HBox>
+                <HBox alignment="CENTER_LEFT" prefHeight="36.0" prefWidth="217.0">
+                    <children>
+                        <Label text="Name: ">
+                            <HBox.margin>
+                                <Insets right="30.0" />
+                            </HBox.margin>
+                        </Label>
+                        <TextField fx:id="namaItem" prefHeight="26.0" prefWidth="170.0">
+                            <HBox.margin>
+                                <Insets />
+                            </HBox.margin>
+                        </TextField>
+                    </children>
+                </HBox>
+                <HBox alignment="CENTER_LEFT" prefHeight="36.0" prefWidth="217.0">
+                    <children>
+                        <Label text="Price:">
+                            <HBox.margin>
+                                <Insets right="39.0" />
+                            </HBox.margin>
+                        </Label>
+                        <TextField fx:id="priceItem" prefHeight="26.0" prefWidth="170.0">
+                            <HBox.margin>
+                                <Insets />
+                            </HBox.margin>
+                        </TextField>
+                    </children>
+                </HBox>
+                <HBox alignment="CENTER_LEFT" prefHeight="58.0" prefWidth="252.0">
+                    <children>
+                        <Label text="Description:">
+                            <HBox.margin>
+                                <Insets right="5.0" />
+                            </HBox.margin>
+                        </Label>
+                        <TextArea fx:id="descItem" prefHeight="48.0" prefWidth="170.0">
+                            <HBox.margin>
+                                <Insets top="5.0" />
+                            </HBox.margin>
+                        </TextArea>
+                    </children>
+                </HBox>
+                <HBox alignment="CENTER_LEFT" prefHeight="36.0" prefWidth="217.0">
+                    <children>
+                        <Label text="Category:">
+                            <HBox.margin>
+                                <Insets right="17.0" />
+                            </HBox.margin>
+                        </Label>
+                        <ComboBox fx:id="kategoriItem" prefHeight="26.0" prefWidth="150.0">
+                            <HBox.margin>
+                                <Insets />
+                            </HBox.margin>
+                        </ComboBox>
+                    </children>
+                </HBox>
+                <HBox prefHeight="36.0" prefWidth="217.0">
+                    <children>
+                        <Button fx:id="addButton" mnemonicParsing="false" onAction="#addItem" prefHeight="25.0" prefWidth="58.0" text="Save">
+                            <HBox.margin>
+                                <Insets top="10.0" />
+                            </HBox.margin>
+                        </Button>
+                        <Button fx:id="resetButton" mnemonicParsing="false" onAction="#reset" prefHeight="25.0" prefWidth="58.0" text="Reset">
+                            <HBox.margin>
+                                <Insets left="5.0" top="10.0" />
+                            </HBox.margin>
+                        </Button>
+                        <Button fx:id="updateButton" mnemonicParsing="false" onAction="#updateItem" prefHeight="25.0" prefWidth="58.0" text="Update">
+                            <HBox.margin>
+                                <Insets left="5.0" top="10.0" />
+                            </HBox.margin>
+                        </Button>
+                        <Button fx:id="deleteButton" mnemonicParsing="false" onAction="#deleteItem" prefHeight="25.0" prefWidth="58.0" text="Delete">
+                            <HBox.margin>
+                                <Insets left="5.0" top="10.0" />
+                            </HBox.margin>
+                        </Button>
+                    </children>
+                </HBox>
+            </children>
+         <BorderPane.margin>
+            <Insets left="5.0" />
+         </BorderPane.margin>
+        </VBox>
+    </left>
+</BorderPane>
